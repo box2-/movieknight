@@ -1,0 +1,10 @@
+INSTALL:
+copy movieknight.pl to ~/.irssi/scripts/
+
+USE (in irssi):
+/script load movieknight.pl
+/mk <movie title>
+
+UNINSTALL:
+/script unload movieknight.pl
+rm ~/.irssi/scripts/movieknight.pl
