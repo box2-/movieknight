@@ -43,8 +43,6 @@ $VERSION = "0.01";
 	license         => 'nouveau BSD',
 );
 
-my $server_list = "YOUR_SERVER | LOCATIONS | HERE";
-
 my $ansi_map = {
 	0 => 'white',
 	1 => 'black',
@@ -78,9 +76,7 @@ sub cmd_movieknight {
 
 	# We have data (movie title), we have an active chat window
 	if ($data && $witem && ($witem->{type} eq "CHANNEL" || $witem->{type} eq "QUERY")) {
-		$witem->command("MSG ".$witem->{name}." \0035/!\\ RED ALERT /!\\\003 MOVIENIGHT IS STARTING \0035/!\\ RED ALERT /!\\");
-		$witem->command("MSG ".$witem->{name}." POINT YOUR VLC PLAYER TO: ".$server_list);
-		#$witem->command("MSG ".$witem->{name}." \002NOW PLAYING:\002 \037".$data);
+		$witem->command("MSG ".$witem->{name}." \0034/!\\ \0035RED ALERT \0034/!\\\0037 MOVIENIGHT IS STARTING \0034/!\\ \0035RED ALERT \0034/!\\");
 		$witem->command("MSG ".$witem->{name}." NOW PLAYING: \037".$data);
 	} else {
 		Irssi::print("Usage: /mk <movie_title>");
